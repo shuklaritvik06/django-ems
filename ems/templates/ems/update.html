@@ -1,0 +1,51 @@
+{% extends "base/base.html" %}
+{% block title %}
+<title>EHelper | Update a Employee</title>
+{% endblock title %} {% block content %}
+ <div class="container py-4">
+     {% include "partials/navbar.html" %}
+ <form class="row g-3" action="/employee/update/{{employee.emp_id}}/" method="post">
+     {% csrf_token %}
+  <div class="col-12">
+    <label for="name" class="form-label">Employee Name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" value="{{employee.name}}">
+  </div>
+   <div class="col-12">
+    <label for="id" class="form-label">Employee ID</label>
+    <input type="text" class="form-control" id="id" placeholder="Enter employee id" name="emp_id" value="{{employee.emp_id}}">
+  </div>
+   <div class="col-12">
+    <label for="email" class="form-label">Employee Email</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" value="{{employee.email}}">
+  </div>
+   <div class="col-12">
+    <label for="phone" class="form-label">Employee Phone</label>
+    <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone" value="{{employee.phone}}">
+  </div>
+     <div class="col-12">
+    <label for="age" class="form-label">Employee Age</label>
+    <input type="text" class="form-control" id="age" name="age" placeholder="Enter your age" value="{{employee.age}}">
+  </div>
+     <div class="col-12">
+    <label for="address" class="form-label">Employee Address</label>
+    <input type="text" class="form-control" id="address" name="address" placeholder="Enter your address" value="{{employee.address}}">
+  </div>
+     <div class="col-12">
+    <label for="full_time" class="form-label">Employee Full Time</label>
+    <input type="text" class="form-control" id="full_time" name="full_time" placeholder="Is he/she full-time?" value="{{employee.full_time}}">
+  </div>
+     <div class="col-12">
+    <label for="designation" class="form-label">Employee Designation</label>
+    <input type="text" class="form-control" id="designation" name="designation" placeholder="Enter your designation" value="{{employee.designation}}">
+  </div>
+     <div class="col-12">
+    <label for="salary" class="form-label">Employee Salary</label>
+    <input type="text" class="form-control" id="salary" name="salary" placeholder="Enter your salary" value="{{employee.salary}}">
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Update Employee</button>
+  </div>
+</form>
+     {% include "partials/footer.html" %}
+  </div>
+{% endblock content %}

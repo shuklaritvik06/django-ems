@@ -1,5 +1,9 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 from .views import *
 
-urlpatterns = []
+urlpatterns = [
+    path("", home_page),
+    path("add/", add_page),
+    path("delete/<int:id>/", delete_page),
+    path("update/<int:id>/", update_page)
+]

@@ -1,0 +1,16 @@
+{% extends "base/base.html" %}
+{% block title %}
+<title>EHelper | An EMS built using django</title>
+{% endblock title %} {% block content %}
+ <div class="container py-4">
+     {% include "partials/navbar.html" %}
+    <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Employee Manager</h1>
+        <p class="col-md-8 fs-4">Manage your employees seamlessly</p>
+        <a href="/employee/"><button class="btn btn-warning btn-lg" type="button">Go Ahead</button></a>
+      </div>
+    </div>
+     {% include "partials/footer.html" %}
+  </div>
+{% endblock content %}
