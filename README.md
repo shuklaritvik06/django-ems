@@ -6,6 +6,7 @@ This is a Employee Management System made using Django and Python
 
 - [x] CRUD
 - [x] Login
+- [x] Slug
 - [x] Register
 - [x] Initially all the new employee created would be alloted a username and password and it will be sent to their mail for login
 - [x] Now user can login with that username and password
@@ -42,6 +43,10 @@ This is a Employee Management System made using Django and Python
 
 ![Screenshot from 2023-05-31 16-18-53](https://github.com/shuklaritvik06/django-ems/assets/72812470/2e6f8ef7-9b1a-4443-98a5-ed630f38ba71)
 ![Screenshot from 2023-05-31 16-19-39](https://github.com/shuklaritvik06/django-ems/assets/72812470/0eeef0c9-5da2-41ad-8ec3-84f568420ce7)
+
+**Update**
+
+![Screenshot from 2023-05-31 17-37-47](https://github.com/shuklaritvik06/django-ems/assets/72812470/c2ac750d-eb2e-4839-b9db-2f06f0974b07)
 
 **Mails**
 
