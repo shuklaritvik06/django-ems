@@ -1,0 +1,22 @@
+<header class="pb-3 mb-4 border-bottom d-flex justify-content-between align-items-center bg-white">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <span class="fs-4">EHelper</span>
+      </a>
+    <div class="d-flex align-items-center">
+        {% if value %}
+        {% if user.is_authenticated %}
+        <span class="me-3 d-none d-sm-inline">Welcome <span class="fw-bold">{{user.username}}</span></span>
+        {% endif %}
+        <a href="/employee/{% if user.is_authenticated %}logout{% else %}{% block url %}login{% endblock %}{% endif %}/"><button class="btn btn-warning me-3">
+                {% if user.is_authenticated %}
+                  Logout
+                {% else %}
+                   {% block data %}Login{% endblock %}
+                {% endif %}
+                </button></a>
+        {% endif %}
+        {% if perms.website.add_employee %}
+        <a href="/employee/add/"><button class="btn btn-success">Add Employee</button></a>
+        {% endif %}
+    </div>
+</header>

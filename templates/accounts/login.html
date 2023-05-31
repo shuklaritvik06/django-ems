@@ -1,0 +1,21 @@
+{% extends "base/base.html" %}
+{% block title %}
+<title>EHelper | Login</title>
+{% endblock title %} {% block content %}
+ <div class="container py-4">
+     {% include "partials/navbar.html" %}
+     {% include 'messages.html' %}
+    <form method="get">
+        {% csrf_token %}
+        {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+      </p>
+    {% endfor %}
+        <p>Don't have an account? Create one <a href="/employee/register/">here</a></p>
+        <button name="login" class="btn btn-success">Login</button>
+    </form>
+     {% include "partials/footer.html" %}
+  </div>
+{% endblock content %}
