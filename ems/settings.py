@@ -1,21 +1,23 @@
 from pathlib import Path
-import os
 from django.contrib.messages import constants as messages
+import os
 
 MESSAGE_TAGS = {
-        messages.DEBUG: 'alert-secondary',
-        messages.INFO: 'alert-info',
-        messages.SUCCESS: 'alert-success',
-        messages.WARNING: 'alert-warning',
-        messages.ERROR: 'alert-danger',
+    messages.DEBUG: "alert-secondary",
+    messages.INFO: "alert-info",
+    messages.SUCCESS: "alert-success",
+    messages.WARNING: "alert-warning",
+    messages.ERROR: "alert-danger",
 }
-
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = "django-insecure-ctw_=yrawmudh4q0vmv)31p06ep-gbl8vqiplknkz6j=xu^&z3"
+SECRET_KEY = os.getenv("SECRET_KEY")
+
 DEBUG = True
+
 ALLOWED_HOSTS = []
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -36,6 +38,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "ems.urls"
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_USE_TLS = True
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.getenv("MY_EMAIL")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -57,11 +67,11 @@ WSGI_APPLICATION = "ems.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "ems",
+        "NAME": os.getenv("DB_NAME"),
         "USER": os.getenv("DB_USER"),
         "PASSWORD": os.getenv("DB_PASSWORD"),
-        "HOST": "localhost",
-        "PORT": "3306",
+        "HOST": os.getenv("DB_HOST"),
+        "PORT": os.getenv("DB_PORT"),
     }
 }
 
@@ -88,9 +98,9 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 
 MEDIA_URL = "/media/"
 
