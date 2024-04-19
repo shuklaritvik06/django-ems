@@ -1,8 +1,7 @@
-# EMS In Django
+# Learning
 
-This is a Employee Management System made using Django and Python
+This is a Learning Project made using Django and Python
 
-## Features
 
 - [x] CRUD
 - [x] Login
